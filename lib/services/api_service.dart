@@ -11,7 +11,7 @@ import '../helper/database_helper.dart';
 const String default_profil =
     'http://192.168.1.210:8082/public/assets/images/user/default.jpg';
 // const String base_api = 'http://192.168.1.210:8080/api';
-const String base_api = 'http://192.168.1.63/galaxy/api';
+const String base_api = 'http://192.168.4.81/galaxy/api';
 const String base_apitest = 'http://192.168.1.7:8080/api';
 const String base_pic = 'http://192.168.1.210:8082';
 
