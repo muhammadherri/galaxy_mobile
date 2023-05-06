@@ -250,7 +250,7 @@ class BMSignInState extends State<BMSignIn> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Image.asset(loglogin, width: width / 2.5, height: width / 2.5),
+              Image.asset(loglogin, width: width / 2, height: width / 2),
               // text(bm_judul,
               //     textColor: appStore.textPrimaryColor,
               //     fontFamily: fontBold,
@@ -273,7 +273,7 @@ class BMSignInState extends State<BMSignIn> {
                         labelText: bm_username,
                         labelStyle: secondaryTextStyle(size: 16),
                         prefixIcon: Icon(Icons.email_outlined,
-                            color: appStore.isDarkModeOn ? white : black),
+                            color: appStore.isDarkModeOn ? white : greenColor),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                               color: appStore.isDarkModeOn ? white : black),
@@ -288,7 +288,7 @@ class BMSignInState extends State<BMSignIn> {
                         labelText: bm_password,
                         labelStyle: secondaryTextStyle(size: 16),
                         prefixIcon: Icon(Icons.lock_outline,
-                            color: appStore.isDarkModeOn ? white : black),
+                            color: appStore.isDarkModeOn ? white : greenColor),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                               color: appStore.isDarkModeOn ? white : black),

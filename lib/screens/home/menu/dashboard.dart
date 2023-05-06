@@ -29,10 +29,10 @@ import 'namedicon.dart';
 import 'output/output.dart';
 import 'package:http/http.dart' as http;
 import 'package:sqflite/sqflite.dart';
+import 'package:intl/intl.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
-
   @override
   State<Dashboard> createState() => _DashboardState();
 }
@@ -46,7 +46,9 @@ class _DashboardState extends State<Dashboard> {
   String imageAvatar = "";
   String last_update = '';
   bool progress_sync = false;
-  // String fullname =getStringAsync("fullname");
+
+  var dateToday = DateFormat('yyyy').format(DateTime.now());
+
   @override
   void initState() {
     super.initState();
@@ -57,6 +59,8 @@ class _DashboardState extends State<Dashboard> {
   Future<void> init() async {
     changeStatusColor(appColorPrimary);
   }
+
+  List trxlist = [];
 
   Future _loadCounter() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -134,6 +138,7 @@ class _DashboardState extends State<Dashboard> {
           context,
         );
       } else {
+        print('gagal');
         throw (responseallocation.body);
       }
       // download
@@ -220,9 +225,9 @@ class _DashboardState extends State<Dashboard> {
                   children: [
                     Row(
                       children: [
-                        CircleAvatar(
-                          backgroundImage: NetworkImage(imageAvatar),
-                        ),
+                        // CircleAvatar(
+                        //   backgroundImage: NetworkImage(imageAvatar),
+                        // ),
                         SizedBox(
                           width: 10,
                         ),
@@ -344,7 +349,7 @@ class _DashboardState extends State<Dashboard> {
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const <Widget>[
+                                children: <Widget>[
                                   SizedBox(
                                     child: Text(
                                       "Report Laba",
@@ -356,7 +361,7 @@ class _DashboardState extends State<Dashboard> {
                                   ),
                                   SizedBox(
                                     child: Text(
-                                      "2022",
+                                      dateToday,
                                       style: TextStyle(
                                           color: Colors.grey,
                                           fontSize: 16,

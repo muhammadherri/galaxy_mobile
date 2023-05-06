@@ -93,6 +93,7 @@ class _AllocationClassState extends State<AllocationClass>
     List<Map> trx =
         await db.rawQuery("SELECT * FROM trxphinventory ORDER BY id desc");
     print(trx);
+    var tes = await db.rawQuery("SELECT * FROM trxphinventory ORDER BY id desc");
     setState(() {
       trxlist = trx;
     });

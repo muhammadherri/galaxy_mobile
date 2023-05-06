@@ -125,17 +125,31 @@ class _PurchaseOrderReqListState extends State<PurchaseOrderReqList> {
                                 ButtonTheme(
                                   minWidth: 88.0,
                                   height: 5.0,
-                                  child: Text(
-                                    widget.list[i]['status'].toString() == '2'
-                                        ? 'Approved'
-                                        : widget.list[i]['status'].toString() ==
-                                                '13'
-                                            ? 'Rejected'
-                                            : 'Open',
-                                    style: const TextStyle(
-                                        color: Color(0xff40963b),
-                                        fontSize: 16,
-                                        fontFamily: 'tahoma'),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        widget.list[i]['status'].toString() == '2'
+                                            ? 'Approved'
+                                            : widget.list[i]['status'].toString() ==
+                                                    '13'
+                                                ? 'Rejected'
+                                                 : widget.list[i]['status'].toString() ==
+                                                    '1'
+                                                ? 'Next Approval '
+                                                : 'Open',
+                                        style: const TextStyle(
+                                            color: Color(0xff40963b),
+                                            fontSize: 16,
+                                            fontFamily: 'tahoma'),
+                                      ),
+                                      Text(
+                                  widget.list[i]['next_approve'].toString(),
+                                style: const TextStyle(
+                                            color: Color(0xff40963b),
+                                            fontSize: 16,
+                                            fontFamily: 'tahoma'),
+                                ),
+                                    ],
                                   ),
                                 )
                               ],

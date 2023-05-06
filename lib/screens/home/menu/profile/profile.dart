@@ -191,10 +191,10 @@ class _ProfileState extends State<Profile> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    CircleAvatar(
-                      radius: 25,
-                      backgroundImage: NetworkImage(imageAvatar),
-                    ),
+                    // CircleAvatar(
+                    //   radius: 25,
+                    //   backgroundImage: NetworkImage(imageAvatar),
+                    // ),
                     const SizedBox(
                       width: 12,
                     ),

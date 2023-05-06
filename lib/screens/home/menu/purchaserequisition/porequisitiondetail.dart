@@ -114,6 +114,8 @@ class _PurchaseOrderRequisitionDetailClassState
             backgroundColor: Colors.red,
             textColor: Colors.white);
       } else {
+        print('success');
+
         http.Response pre =
             await http.post(Uri.parse('$base_api/app/$id'), body: {
           'authorized_status': '2', //status
@@ -122,6 +124,7 @@ class _PurchaseOrderRequisitionDetailClassState
           'comments': note, //comment
         });
         var data = json.decode(pre.body.toString());
+        print('success');
         print(data);
         Fluttertoast.showToast(
             msg: 'Approve Successfully',
@@ -158,7 +161,7 @@ class _PurchaseOrderRequisitionDetailClassState
       http.Response pre =
           await http.post(Uri.parse('$base_api/rjc/$id'), body: {
         'authorized_status': '13', //status
-        'app_lvl_id': app_lvl, //app_lvl +
+        'app_lvl_id': '12', //app_lvl +
         'api_token': toktoken, //token
         'comments': note, //comment
       });
@@ -514,46 +517,47 @@ class _PurchaseOrderRequisitionDetailClassState
                   SizedBox(
                     height: 10,
                   ),
-                  Material(
-                    type: MaterialType.transparency,
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20),
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
-                        ),
-                        border: Border.all(width: 1, color: Colors.white),
-                        color: const Color(0xff40963b),
-                      ),
-                      child: InkWell(
-                        onTap: (() {
-                          getCameraImageGallery();
-                        }),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            // ignore: prefer_const_literals_to_create_immutables
-                            children: [
-                              const Text(
-                                'ADD SIGNATURE',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontFamily: 'bold'),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Material(
+                  //   type: MaterialType.transparency,
+                  //   child: Ink(
+                  //     decoration: BoxDecoration(
+                  //       borderRadius: const BorderRadius.only(
+                  //         bottomLeft: Radius.circular(20),
+                  //         bottomRight: Radius.circular(20),
+                  //         topLeft: Radius.circular(20),
+                  //         topRight: Radius.circular(20),
+                  //       ),
+                  //       border: Border.all(width: 1, color: Colors.white),
+                  //       color: const Color(0xff40963b),
+                  //     ),
+                  //     child: InkWell(
+                  //       onTap: (() {
+                  //         getCameraImageGallery();
+                  //       }),
+                  //       borderRadius: BorderRadius.only(
+                  //         bottomLeft: Radius.circular(20),
+                  //         bottomRight: Radius.circular(20),
+                  //       ),
+                  //       child: Padding(
+                  //         padding: const EdgeInsets.all(15.0),
+                  //         child: Row(
+                  //           mainAxisAlignment: MainAxisAlignment.center,
+                  //           // ignore: prefer_const_literals_to_create_immutables
+                  //           children: [
+                  //             const Text(
+                  //               'ADD SIGNATURE',
+                  //               style: TextStyle(
+                  //                   color: Colors.white,
+                  //                   fontSize: 14,
+                  //                   fontFamily: 'bold'),
+                  //             )
+                  //           ],
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                
                 ],
               ),
             ),
@@ -615,12 +619,12 @@ class _PurchaseOrderRequisitionDetailClassState
                         children: [
                           Container(
                             // color: Color.fromRGBO(250, 194, 25, 1),
-                            width: 180,
+                            width: 160,
                             decoration: BoxDecoration(
                                 color: Color.fromRGBO(250, 194, 25, 1),
                                 borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(10),
-                                    topLeft: Radius.circular(10))),
+                                    bottomLeft: Radius.circular(20),
+                                    topLeft: Radius.circular(20))),
                             child: TextButton(
                               onPressed: () async {
                                 poreqRejected();
@@ -635,13 +639,13 @@ class _PurchaseOrderRequisitionDetailClassState
                             ),
                           ),
                           Container(
-                            width: 180,
+                            width: 160,
                             // color: Color(0xff40963b),
                             decoration: BoxDecoration(
                                 color: Colors.green,
                                 borderRadius: BorderRadius.only(
-                                    bottomRight: Radius.circular(10),
-                                    topRight: Radius.circular(10))),
+                                    bottomRight: Radius.circular(20),
+                                    topRight: Radius.circular(20))),
                             child: TextButton(
                               onPressed: () {
                                 poreqApproval();
@@ -686,12 +690,12 @@ class _PurchaseOrderRequisitionDetailClassState
                             children: [
                               Container(
                                 // color: Color.fromRGBO(250, 194, 25, 1),
-                                width: 180,
+                                width: 160,
                                 decoration: BoxDecoration(
                                     color: Color.fromRGBO(250, 194, 25, 1),
                                     borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(10),
-                                        topLeft: Radius.circular(10))),
+                                        bottomLeft: Radius.circular(20),
+                                        topLeft: Radius.circular(20))),
                                 child: TextButton(
                                   onPressed: () async {
                                     poreqRejected();
@@ -706,13 +710,13 @@ class _PurchaseOrderRequisitionDetailClassState
                                 ),
                               ),
                               Container(
-                                width: 180,
+                                width: 160,
                                 // color: Color(0xff40963b),
                                 decoration: BoxDecoration(
                                     color: Colors.green,
                                     borderRadius: BorderRadius.only(
-                                        bottomRight: Radius.circular(10),
-                                        topRight: Radius.circular(10))),
+                                        bottomRight: Radius.circular(20),
+                                        topRight: Radius.circular(20))),
                                 child: TextButton(
                                   onPressed: () {
                                     poreqApproval();
@@ -757,12 +761,12 @@ class _PurchaseOrderRequisitionDetailClassState
                                 children: [
                                   Container(
                                     // color: Color.fromRGBO(250, 194, 25, 1),
-                                    width: 180,
+                                    width: 160,
                                     decoration: BoxDecoration(
                                         color: Color.fromRGBO(250, 194, 25, 1),
                                         borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(10),
-                                            topLeft: Radius.circular(10))),
+                                            bottomLeft: Radius.circular(20),
+                                            topLeft: Radius.circular(20))),
                                     child: TextButton(
                                       onPressed: () async {
                                         poreqRejected();
@@ -777,13 +781,13 @@ class _PurchaseOrderRequisitionDetailClassState
                                     ),
                                   ),
                                   Container(
-                                    width: 180,
+                                    width: 160,
                                     // color: Color(0xff40963b),
                                     decoration: BoxDecoration(
                                         color: Colors.green,
                                         borderRadius: BorderRadius.only(
-                                            bottomRight: Radius.circular(10),
-                                            topRight: Radius.circular(10))),
+                                            bottomRight: Radius.circular(20),
+                                            topRight: Radius.circular(20))),
                                     child: TextButton(
                                       onPressed: () {
                                         poreqApproval();
@@ -804,6 +808,78 @@ class _PurchaseOrderRequisitionDetailClassState
                         ),
                       ),
                     )
+                  : userlevel == '4' && app_lvl == '4'
+                  ? BottomAppBar(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  spreadRadius: 5,
+                                  blurRadius: 20,
+                                  offset: const Offset(0, 3))
+                            ],
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20))),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Row(
+                                children: [
+                                  Container(
+                                    // color: Color.fromRGBO(250, 194, 25, 1),
+                                    width: 160,
+                                    decoration: BoxDecoration(
+                                        color: Color.fromRGBO(250, 194, 25, 1),
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(20),
+                                            topLeft: Radius.circular(20))),
+                                    child: TextButton(
+                                      onPressed: () async {
+                                        poreqRejected();
+                                      },
+                                      child: Text(
+                                        'Reject',
+                                        style: TextStyle(
+                                            fontFamily: 'tahoma',
+                                            fontSize: 16,
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 160,
+                                    // color: Color(0xff40963b),
+                                    decoration: BoxDecoration(
+                                        color: Colors.green,
+                                        borderRadius: BorderRadius.only(
+                                            bottomRight: Radius.circular(20),
+                                            topRight: Radius.circular(20))),
+                                    child: TextButton(
+                                      onPressed: () {
+                                        poreqApproval();
+                                      },
+                                      child: Text(
+                                        'APPROVE',
+                                        style: TextStyle(
+                                            fontFamily: 'tahoma',
+                                            fontSize: 16,
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  
                   : BottomAppBar(),
     );
   }
